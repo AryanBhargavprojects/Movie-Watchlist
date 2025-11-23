@@ -70,4 +70,4 @@ A personal movie watchlist application that allows users to search for movies, v
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is open source
