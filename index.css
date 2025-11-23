@@ -1,0 +1,356 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #121212;
+    color: #FFFFFF;
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background-image: url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin: 0;
+}
+
+.header-title-link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.nav-link {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* Search Section */
+.search-container {
+    max-width: 800px;
+    margin: -25px auto 40px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.search-bar {
+    background: #2E2E2F;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    height: 50px;
+    border: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.search-bar:focus-within {
+    border-color: #4B4B4B;
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+    color: #9CA3AF;
+    margin-right: 10px;
+}
+
+#search-input {
+    background: transparent;
+    border: none;
+    color: #FFFFFF;
+    flex-grow: 1;
+    font-family: inherit;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+#search-input::placeholder {
+    color: #9CA3AF;
+}
+
+#search-btn {
+    background: #4B4B4B;
+    border: none;
+    color: #FFFFFF;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 0.85rem;
+    transition: background 0.2s;
+}
+
+#search-btn:hover {
+    background: #5C5C5C;
+}
+
+/* Main Content */
+#main-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+    min-height: 400px;
+}
+
+/* State Visibility */
+.state-view {
+    display: none;
+}
+
+.state-view.active {
+    display: block;
+}
+
+/* Placeholder States (Initial & No Data) */
+.placeholder-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    color: #DFDFDF;
+    text-align: center;
+}
+
+.placeholder-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+    color: #363636;
+}
+
+/* Movie List */
+.movie-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.movie-card {
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid #2C2C2C;
+    padding-bottom: 30px;
+}
+
+.movie-card:last-child {
+    border-bottom: none;
+}
+
+.movie-poster {
+    flex-shrink: 0;
+    width: 100px;
+    height: 148px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #2E2E2F;
+}
+
+.movie-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.movie-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.movie-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.movie-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.movie-rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.8rem;
+}
+
+.star-icon {
+    width: 14px;
+    height: 14px;
+    color: #FEC654;
+}
+
+.movie-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 0.75rem;
+    color: #FFFFFF;
+}
+
+.watchlist-btn {
+    background: transparent;
+    border: none;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.75rem;
+    padding: 0;
+    margin-left: auto;
+    /* Push to right on mobile if needed, or keep inline */
+}
+
+.watchlist-btn:hover {
+    opacity: 0.8;
+}
+
+.plus-icon {
+    width: 16px;
+    height: 16px;
+    background: #FFFFFF;
+    color: #000;
+    border-radius: 50%;
+    padding: 2px;
+}
+
+.movie-plot {
+    font-size: 0.85rem;
+    color: #A5A5A5;
+    line-height: 1.6;
+    margin-top: 4px;
+    max-width: 500px;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .movie-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .movie-header {
+        justify-content: center;
+    }
+
+    .movie-meta {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .watchlist-btn {
+        margin-left: 0;
+    }
+}
+
+/* Watchlist Page Specifics */
+.remove-btn {
+    background: transparent;
+    border: none;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.75rem;
+    padding: 0;
+    margin-left: auto;
+}
+
+.remove-btn:hover {
+    opacity: 0.8;
+}
+
+.minus-icon {
+    width: 16px;
+    height: 16px;
+    background: #FFFFFF;
+    color: #000;
+    border-radius: 50%;
+    padding: 2px;
+}
+
+.add-movies-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
+
+.plus-icon-circle {
+    width: 20px;
+    height: 20px;
+    color: #FFFFFF;
+}
+
+.state-empty-watchlist .placeholder-content {
+    color: #DFDFDF;
+    font-weight: 700;
+    font-size: 1.1rem;
+}

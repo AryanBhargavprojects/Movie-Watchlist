@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Watchlist</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1><a href="index.html" class="header-title-link">Find your film</a></h1>
+                <a href="wishlist.html" class="nav-link">My Watchlist</a>
+            </div>
+        </header>
+
+        <div class="search-container">
+            <div class="search-bar">
+                <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                        clip-rule="evenodd" />
+                </svg>
+                <input type="text" placeholder="Search for a movie" id="search-input">
+                <button id="search-btn">Search</button>
+            </div>
+        </div>
+
+        <main id="main-content">
+            <!-- State 1: Initial State -->
+            <!-- To view this state, add 'active' class here and remove from others -->
+            <div class="state-view state-initial active">
+                <div class="placeholder-content">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="placeholder-icon" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
+                    </svg>
+                    <p>Start exploring</p>
+                </div>
+            </div>
+
+            <!-- State 2: Populated Search State (Default Active for Demo) -->
+            <div class="state-view state-populated">
+                <div class="movie-list">
+                    <!-- Movies will be injected here by JS -->
+                </div>
+            </div>
+
+            <!-- State 3: No Data State -->
+            <!-- To view this state, add 'active' class here and remove from others -->
+            <div class="state-view state-no-data">
+                <div class="placeholder-content">
+                    <p>Unable to find what you’re looking for. Please try another search.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
