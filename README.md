@@ -1,6 +1,7 @@
 # Movie Watchlist
 
 A personal movie watchlist application that allows users to search for movies, view details, and save their favorites to a local watchlist. Built with vanilla HTML, CSS, and JavaScript using the OMDb API.
+![alt text](image.png)
 
 ## Features
 
